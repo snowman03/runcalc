@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+Возраст
+<input type="number" id="agev" >
+Пульс в покое
+<input type="number" id="restv" >
+Интенсив
+<input type="number" id="intensv" value="0">
+
+<button onClick="myScript()">Старт</button>
+
+<script>
+
+function myScript(){ 
+
+let age = document.getElementById("agev").value;
+let pulseAtRest = document.getElementById("restv").value;
+let intens = document.getElementById("intensv").value;
+let maxpulse = (220 - age);
+let rsr = Math.round(maxpulse - pulseAtRest);
+let zone70 = Math.round(rsr * 0.7) + Math.round(pulseAtRest);
+let zone60 = Math.round(rsr * 0.6) + Math.round(pulseAtRest);
+
+
+console.log(zone70)
+let newDiv = document.createElement("div");
+newDiv.innerHTML = "<br><p>Максимальный ЧСС - " +maxpulse+" <p>Резерв сердечного ритма (РСР) - "+rsr+ "<p> Целевая зона: <p>60% - "+zone60+" <p>70% - "+zone70;
+document.body.appendChild(newDiv);
+}
+
+</script>
+
+</body>
+</html>
