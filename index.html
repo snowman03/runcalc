@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
-<div>
-Возраст
-<input type="number" id="agev" >
-Пульс в покое
-<input type="number" id="restv" >
-Интенсив
-<input type="number" id="intensv" value="0">
 
-<button onClick="myScript()">Старт</button>
+<body>
+<div class="container-fluid">
+<h3 class="alert alert-success" >Рассчет пульсовых зон</h1>
+<p>Возраст
+<input type="number" id="agev" ></p>
+<p>Пульс в покое
+<input type="number" id="restv" ></p>
+<p>Интенсив
+<input type="number" id="intensv" value="0"></p>
+
+<p><button onClick="myScript()">Старт</button></p>
 
 <script>
 
@@ -28,21 +31,25 @@ let zone60 = Math.round(rsr * 0.6) + Math.round(pulseAtRest);
 
 console.log(zone70)
 let newDiv = document.createElement("div");
-newDiv.innerHTML = "<br><p>Максимальный ЧСС - " +maxpulse+" <p>Резерв сердечного ритма (РСР) - "+rsr+ "<p> Целевая зона: <p>60% - "+zone60+" <p>70% - "+zone70;
+newDiv.innerHTML = "<br><p class=\"alert alert-danger\" >Максимальный ЧСС - " +maxpulse+" <p>Резерв сердечного ритма (РСР) - "+rsr+ "<p> Целевая зона: <p class=\"alert alert-success\">60% - "+zone60+" <p class=\"alert alert-warning\">70% - "+zone70;
+newDiv.classList.add('container');
 document.body.appendChild(newDiv);
 }
 
 </script>
 </div>
 
-<div>
-Масса тела 
-<input type="number" id="massv" >
-Сколько белка на кг веса
-<input type="number" id="belokv" >
-Количество протеина в мерной ложке 
-<input type="number" id="mgv" value="0">
-<button onClick="myScript_two()">Старт</button>
+
+<p>
+<div class="container-fluid">
+<h3 class="alert alert-success" >Рассчет белка на массу тела</h1>
+<p>Масса тела 
+<input type="number" id="massv" ></p>
+<p>Сколько белка на кг веса
+<input type="number" id="belokv" value="1.5"></p>
+<p>Количество протеина в мерной ложке 
+<input type="number" id="mgv" value="0"></p>
+<p><button onClick="myScript_two()">Старт</button></p>
 
 
 <script>
@@ -60,11 +67,13 @@ let mg_scoopes = Math.round(belok_na_mass / mg);
 //let zone60 = Math.round(rsr * 0.6) + Math.round(pulseAtRest);
 
 let newDiv = document.createElement("div");
-newDiv.innerHTML = "<br><p>Вам нужно - " +belok_na_mass+" белка на массу тела <p>Сколько - "+mg_scoopes+ " ложек";
+newDiv.innerHTML = "<br><p>Вам нужно - " +belok_na_mass+" белка на массу тела <p>Это - "+mg_scoopes+ " ложек протеина";
+newDiv.classList.add('container');
 document.body.appendChild(newDiv);
 }
 
 </script>
 </div>
+
 </body>
 </html>
