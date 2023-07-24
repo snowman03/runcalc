@@ -31,7 +31,9 @@ let zone60 = Math.round(rsr * 0.6) + Math.round(pulseAtRest);
 
 console.log(zone70)
 let newDiv = document.createElement("div");
-newDiv.innerHTML = "<br><p class=\"alert alert-danger\" >Максимальный ЧСС - " +maxpulse+" <p>Резерв сердечного ритма (РСР) - "+rsr+ "<p> Целевая зона: <p class=\"alert alert-success\">60% - "+zone60+" <p class=\"alert alert-warning\">70% - "+zone70;
+let zone70_range = zone70+10;
+newDiv.innerHTML = "<br><p class=\"alert alert-danger\" >Максимальный ЧСС - " +maxpulse+" <p>Резерв сердечного ритма (РСР) - "+rsr+ 
+"<p> Целевая зона: <p class=\"alert alert-success\">60%: "+zone60+" - "+zone70+" <p class=\"alert alert-warning\">70%: "+zone70+" - "+zone70_range;
 newDiv.classList.add('container-fluid');
 document.body.appendChild(newDiv);
 }
