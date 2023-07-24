@@ -3,7 +3,7 @@
 <head>
 </head>
 <body>
-
+<div>
 Возраст
 <input type="number" id="agev" >
 Пульс в покое
@@ -33,6 +33,38 @@ document.body.appendChild(newDiv);
 }
 
 </script>
+</div>
 
+<div>
+Масса тела 
+<input type="number" id="massv" >
+Сколько белка на кг веса
+<input type="number" id="belokv" >
+Количество протеина в мерной ложке 
+<input type="number" id="mgv" value="0">
+<button onClick="myScript_two()">Старт</button>
+
+
+<script>
+
+function myScript_two(){ 
+
+let mass = document.getElementById("massv").value;
+let belok = document.getElementById("belokv").value;
+let mg = document.getElementById("mgv").value;
+
+let belok_na_mass = Math.round(mass * belok);
+let mg_scoopes = Math.round(belok_na_mass / mg);
+
+//let zone70 = Math.round(rsr * 0.7) + Math.round(pulseAtRest);
+//let zone60 = Math.round(rsr * 0.6) + Math.round(pulseAtRest);
+
+let newDiv = document.createElement("div");
+newDiv.innerHTML = "<br><p>Вам нужно - " +belok_na_mass+" белка на массу тела <p>Сколько - "+mg_scoopes+ " ложек";
+document.body.appendChild(newDiv);
+}
+
+</script>
+</div>
 </body>
 </html>
