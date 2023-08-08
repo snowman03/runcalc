@@ -11,7 +11,7 @@
 <input type="number" id="agev" ></p>
 <p>Пульс в покое
 <input type="number" id="restv" ></p>
-<p>Интенсив
+<p>Интенсивность %
 <input type="number" id="intensv" value="0"></p>
 
 <p><button onClick="myScript()">Старт</button></p>
@@ -27,20 +27,22 @@ let maxpulse = (220 - age);
 let rsr = Math.round(maxpulse - pulseAtRest);
 let zone70 = Math.round(rsr * 0.7) + Math.round(pulseAtRest);
 let zone60 = Math.round(rsr * 0.6) + Math.round(pulseAtRest);
+let intense_zone = Math.round(rsr / 100 * Math.round(intens)) + Math.round(pulseAtRest);
 
 
-console.log(zone70)
+
 let newDiv = document.createElement("div");
 let zone70_range = zone70+10;
 newDiv.innerHTML = "<br><p class=\"alert alert-danger\" >Максимальный ЧСС: " +maxpulse+" <p>Резерв сердечного ритма (РСР): "+rsr+ 
-"<p> Целевая зона: <p class=\"alert alert-success\">60%: "+zone60+" - "+zone70+" <p class=\"alert alert-warning\">70%: "+zone70+" - "+zone70_range;
+"<p> Целевая зона: <p class=\"alert alert-success\">60%: "+zone60+" - "+zone70+" <p class=\"alert alert-warning\">70%: "+zone70+" - "+zone70_range+
+"<br><p class=\"alert alert-info\" > При интенсивности "+intens+"% ваш целевой пульс будет: ~"+intense_zone+"</p>";
 newDiv.classList.add('container-fluid');
 document.body.appendChild(newDiv);
 }
 
 </script>
 </div>
-
+<!---
 <div class="container-fluid">
 <h3 class="alert alert-success" >Рассчет белка на массу тела</h1>
 <p>Масса тела 
@@ -51,7 +53,7 @@ document.body.appendChild(newDiv);
 <input type="number" id="mgv" value="0"></p>
 <p><button onClick="myScript_two()">Старт</button></p>
 
-
+--->
 <script>
 
 function myScript_two(){ 
