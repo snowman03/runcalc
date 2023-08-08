@@ -1,20 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
-<div class="container-fluid">
-<h3 class="alert alert-success" >Рассчет пульсовых зон</h1>
+<div class="container">
+
+
+
+
+
+<h3 class="alert alert-success" >Рассчет пульсовых зон</h3>
 <p>Возраст
 <input type="number" id="agev" ></p>
 <p>Пульс в покое
 <input type="number" id="restv" ></p>
 <p>Интенсивность %
-<input type="number" id="intensv" value="0"></p>
+<input type="number" id="intensv" ></p>
 
-<p><button onClick="myScript()">Старт</button></p>
+<p><button class="btn btn-success" type="submit" onClick="myScript()">Показать</button></p>
+
+
 
 <script>
 
@@ -36,7 +46,7 @@ let zone70_range = zone70+10;
 newDiv.innerHTML = "<br><p class=\"alert alert-danger\" >Максимальный ЧСС: " +maxpulse+" <p>Резерв сердечного ритма (РСР): "+rsr+ 
 "<p> Целевая зона: <p class=\"alert alert-success\">60%: "+zone60+" - "+zone70+" <p class=\"alert alert-warning\">70%: "+zone70+" - "+zone70_range+
 "<br><p class=\"alert alert-info\" > При интенсивности "+intens+"% ваш целевой пульс будет: ~"+intense_zone+"</p>";
-newDiv.classList.add('container-fluid');
+newDiv.classList.add('container');
 document.body.appendChild(newDiv);
 }
 
@@ -75,7 +85,7 @@ document.body.appendChild(newDiv);
 }
 
 </script>
-</div>
+
 
 </body>
 </html>
