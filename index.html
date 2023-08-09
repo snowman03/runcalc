@@ -15,7 +15,7 @@
 
 
 <h3 class="alert alert-success" >Расчет пульсовых зон</h3>
-<p>Возраст
+<p>Возраст   
 <input type="number" id="agev" ></p>
 <p>Пульс в покое
 <input type="number" id="restv" ></p>
@@ -33,7 +33,7 @@ function myScript(){
 let age = document.getElementById("agev").value;
 let pulseAtRest = document.getElementById("restv").value;
 let intens = document.getElementById("intensv").value;
-let maxpulse = (220 - age);
+let maxpulse = Math.round(205.8 -(0.685 * age));
 let rsr = Math.round(maxpulse - pulseAtRest);
 let zone70 = Math.round(rsr * 0.7) + Math.round(pulseAtRest);
 let zone60 = Math.round(rsr * 0.6) + Math.round(pulseAtRest);
