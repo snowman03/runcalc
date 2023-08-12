@@ -44,7 +44,7 @@ let intense_zone = Math.round(rsr / 100 * Math.round(intens)) + Math.round(pulse
 let newDiv = document.createElement("div");
 let zone70_range = zone70+10;
 newDiv.innerHTML = "<br><p class=\"alert alert-danger\" >Максимальный ЧСС: " +maxpulse+" <p>Резерв сердечного ритма (РСР): "+rsr+ 
-"<p> Целевая зона: <p class=\"alert alert-success\">60%: "+zone60+" - "+zone70+" <p class=\"alert alert-warning\">70%: "+zone70+" - "+zone70_range+
+"<p> Целевая зона: <p class=\"alert alert-primary\">Зона 2 60%: "+zone60+" - "+zone70+" <p class=\"alert alert-success\">Зона 3 70%: "+zone70+" - "+zone70_range+
 "<br><p class=\"alert alert-info\" > При интенсивности "+intens+"% ваш целевой пульс будет: ~"+intense_zone+"</p>";
 newDiv.classList.add('container');
 document.body.appendChild(newDiv);
