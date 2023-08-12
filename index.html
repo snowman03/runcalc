@@ -26,7 +26,7 @@
 
 <p><button class="btn btn-success" type="submit" onClick="myScript()">Показать</button></p>
 
-
+<div class="container" id="result"></div>
 
 <script>
 
@@ -46,7 +46,7 @@ let intense_zone = Math.round(rsr / 100 * Math.round(intens)) + Math.round(pulse
 let newDiv = document.createElement("div");
 let zone70_range = zone70+10;
 newDiv.innerHTML = "<br><p class=\"alert alert-danger\" >Максимальный ЧСС: " +maxpulse+" <p>Резерв сердечного ритма (РСР): "+rsr+ 
-"<p> Целевая зона: <p class=\"alert alert-primary\">Зона 2 60%: "+zone60+" - "+zone70+" <p class=\"alert alert-success\">Зона 3 70%: "+zone70+" - "+zone70_range+
+"<p> Целевая зона: <p class=\"alert alert-success\">Зона 2. 60%: "+zone60+" - "+zone70+" <p class=\"alert alert-warning\">Зона 3. 70%: "+zone70+" - "+zone70_range+
 "<br><p class=\"alert alert-info\" > При интенсивности "+intens+"% ваш целевой пульс будет: ~"+intense_zone+"</p>";
 newDiv.classList.add('container');
 document.body.appendChild(newDiv);
@@ -54,42 +54,6 @@ document.body.appendChild(newDiv);
 
 </script>
 </div>
-<!---
-<div class="container-fluid">
-<h3 class="alert alert-success" >Рассчет белка на массу тела</h1>
-<p>Масса тела 
-<input type="number" id="massv" ></p>
-<p>Сколько белка на кг веса
-<input type="number" id="belokv" value="1.5"></p>
-<p>Количество протеина в мерной ложке 
-<input type="number" id="mgv" value="0"></p>
-<p><button onClick="myScript_two()">Старт</button></p>
 
---->
-<script>
-
-function myScript_two(){ 
-
-let mass = document.getElementById("massv").value;
-let belok = document.getElementById("belokv").value;
-let mg = document.getElementById("mgv").value;
-
-let belok_na_mass = Math.round(mass * belok);
-let mg_scoopes = Math.round(belok_na_mass / mg);
-
-//let zone70 = Math.round(rsr * 0.7) + Math.round(pulseAtRest);
-//let zone60 = Math.round(rsr * 0.6) + Math.round(pulseAtRest);
-
-let newDiv = document.createElement("div");
-newDiv.innerHTML = "<br><p>Вам нужно: " +belok_na_mass+" белка на массу тела <p>Это: "+mg_scoopes+ " ложек протеина";
-newDiv.classList.add('container-fluid');
-document.body.appendChild(newDiv);
-}
-
-</script>
-
-<footer>
-<div class="container">AD © <script>document.write( new Date().getFullYear() );</script> </div>
-</footer>
 </body>
 </html>
