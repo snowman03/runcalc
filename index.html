@@ -35,7 +35,7 @@ function myScript(){
 let age = document.getElementById("agev").value;
 let pulseAtRest = document.getElementById("restv").value;
 let intens = document.getElementById("intensv").value;
-let maxpulse = Math.round(205.8 -(0.685 * age));
+let maxpulse = Math.round(220 - age);
 let rsr = Math.round(maxpulse - pulseAtRest);
 let zone70 = Math.round(rsr * 0.7) + Math.round(pulseAtRest);
 let zone60 = Math.round(rsr * 0.6) + Math.round(pulseAtRest);
