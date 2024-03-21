@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
-	<title>Расчет пульсовых зон калькулятор</title>
+	<title>Калькулятор пульсовых зон</title>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -48,7 +48,7 @@ let intense_zone = Math.round(rsr / 100 * Math.round(intens)) + Math.round(pulse
 
 let newDiv = document.createElement("div");
 let zone70_range = zone70+10;
-newDiv.innerHTML = "<br><p class=\"alert alert-danger\" >Максимальный ЧСС (214-(0.8 x возраст)): " +maxpulse+" <p>Резерв сердечного ритма (РСР): "+rsr+ 
+newDiv.innerHTML = "<br><p class=\"alert alert-danger\" >Максимальный ЧСС (211-(0.64 x возраст)): " +maxpulse+" <p>Резерв сердечного ритма (РСР): "+rsr+ 
 "<p> Целевая зона: <p class=\"alert alert-primary\">Зона 2: "+zone60+" - "+zone70+" <p class=\"alert alert-success\">Зона 3: "+zone70+" - "+zone80+
 "<p class=\"alert alert-warning\">Зона 4: "+zone80+" - "+zone90+" <p class=\"alert alert-danger\">Зона 5: "+zone90+" - "+zone100+
 "<br><p class=\"alert alert-secondary\" > При интенсивности "+intens+"% ваш целевой пульс будет: ~"+intense_zone+"</p>";
